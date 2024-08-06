@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>user.dart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+user.dart</font>
+</center></td></tr></table>
+<pre><span class="s0">class </span><span class="s1">User </span><span class="s2">{</span>
+  <span class="s0">final </span><span class="s1">int id</span><span class="s2">;</span>
+  <span class="s0">final </span><span class="s1">String name</span><span class="s2">;</span>
+  <span class="s0">final </span><span class="s1">String email</span><span class="s2">;</span>
+  <span class="s0">final </span><span class="s1">String phone</span><span class="s2">;</span>
+  <span class="s0">final </span><span class="s1">String website</span><span class="s2">;</span>
+  <span class="s0">final </span><span class="s1">double lat</span><span class="s2">;</span>
+  <span class="s0">final </span><span class="s1">double lng</span><span class="s2">;</span>
+  <span class="s0">final </span><span class="s1">String street</span><span class="s2">;</span>
+  <span class="s0">final </span><span class="s1">String companyCatchPhrase</span><span class="s2">;</span>
+
+  <span class="s1">User</span><span class="s2">({</span>
+    <span class="s1">required </span><span class="s0">this</span><span class="s2">.</span><span class="s1">id</span><span class="s2">,</span>
+    <span class="s1">required </span><span class="s0">this</span><span class="s2">.</span><span class="s1">name</span><span class="s2">,</span>
+    <span class="s1">required </span><span class="s0">this</span><span class="s2">.</span><span class="s1">email</span><span class="s2">,</span>
+    <span class="s1">required </span><span class="s0">this</span><span class="s2">.</span><span class="s1">phone</span><span class="s2">,</span>
+    <span class="s1">required </span><span class="s0">this</span><span class="s2">.</span><span class="s1">website</span><span class="s2">,</span>
+    <span class="s1">required </span><span class="s0">this</span><span class="s2">.</span><span class="s1">lat</span><span class="s2">,</span>
+    <span class="s1">required </span><span class="s0">this</span><span class="s2">.</span><span class="s1">lng</span><span class="s2">,</span>
+    <span class="s1">required </span><span class="s0">this</span><span class="s2">.</span><span class="s1">street</span><span class="s2">,</span>
+    <span class="s1">required </span><span class="s0">this</span><span class="s2">.</span><span class="s1">companyCatchPhrase</span><span class="s2">,</span>
+  <span class="s2">});</span>
+
+  <span class="s1">factory User</span><span class="s2">.</span><span class="s1">fromJson</span><span class="s2">(</span><span class="s1">Map</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">dynamic</span><span class="s2">&gt; </span><span class="s1">json</span><span class="s2">) {</span>
+    <span class="s0">return </span><span class="s1">User</span><span class="s2">(</span>
+      <span class="s1">id</span><span class="s2">: </span><span class="s1">json</span><span class="s2">[</span><span class="s3">'id'</span><span class="s2">],</span>
+      <span class="s1">name</span><span class="s2">: </span><span class="s1">json</span><span class="s2">[</span><span class="s3">'name'</span><span class="s2">],</span>
+      <span class="s1">email</span><span class="s2">: </span><span class="s1">json</span><span class="s2">[</span><span class="s3">'email'</span><span class="s2">],</span>
+      <span class="s1">phone</span><span class="s2">: </span><span class="s1">json</span><span class="s2">[</span><span class="s3">'phone'</span><span class="s2">],</span>
+      <span class="s1">website</span><span class="s2">: </span><span class="s1">json</span><span class="s2">[</span><span class="s3">'website'</span><span class="s2">],</span>
+      <span class="s1">lat</span><span class="s2">: </span><span class="s1">double</span><span class="s2">.</span><span class="s1">parse</span><span class="s2">(</span><span class="s1">json</span><span class="s2">[</span><span class="s3">'address'</span><span class="s2">][</span><span class="s3">'geo'</span><span class="s2">][</span><span class="s3">'lat'</span><span class="s2">]),</span>
+      <span class="s1">lng</span><span class="s2">: </span><span class="s1">double</span><span class="s2">.</span><span class="s1">parse</span><span class="s2">(</span><span class="s1">json</span><span class="s2">[</span><span class="s3">'address'</span><span class="s2">][</span><span class="s3">'geo'</span><span class="s2">][</span><span class="s3">'lng'</span><span class="s2">]),</span>
+      <span class="s1">street</span><span class="s2">: </span><span class="s1">json</span><span class="s2">[</span><span class="s3">'address'</span><span class="s2">][</span><span class="s3">'street'</span><span class="s2">],</span>
+      <span class="s1">companyCatchPhrase</span><span class="s2">: </span><span class="s1">json</span><span class="s2">[</span><span class="s3">'company'</span><span class="s2">][</span><span class="s3">'catchPhrase'</span><span class="s2">],</span>
+    <span class="s2">);</span>
+  <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
